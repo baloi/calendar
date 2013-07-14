@@ -1,0 +1,15 @@
+.... List of Residents .... <br />
+<table border='1'>
+<tr><th>Name</th><th>Insurance</th><th>Admit Date</th><th> <center>x</center> </th></tr>
+<%  Resident.all do |resident| %>
+<tr>
+  <td style="padding-left: 10px; padding-right: 5px">
+        <%= resident.lastname %>, <%= resident.firstname %> 
+  </td>
+  <td style="padding-left: 10px; padding-right: 5px"><%= resident.insurance %></td>
+  <td style="padding-left: 10px; padding-right: 5px"><%= resident.admit_date.to_s %></td>
+  <td><%= delete_resident_button(resident.id) %></td>
+</tr>
+<% end %>
+
+</table>

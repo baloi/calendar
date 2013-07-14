@@ -1,0 +1,46 @@
+
+> DONE >>> resident.insurance 
+
+
+> therapist class (id, name, discipline)
+  - regarding discipline (hyperlink to dynamically created discpline list read from DB...)
+> therapist-resident many-to-many
+> therapist_residents table
+  . id
+  . therapist_id
+  . resident_id
+> therapist.discipline
+> therapist.residents
+
+> list of days and appointments/events
+  . calendar.days
+  . calendar.day(day_number).events
+
+
+
+------------------------------------------------
+
+This is the way to get the parameters from a form:
+
+  lastname = params[:resident][:lastname]
+  firstname = params[:resident][:firstname]
+  admit_date = params[:resident][:admit_date].to_s
+
+From this:
+
+  <label for="resident_firstname">Firstname:</label><br /> 
+  <input id="resident_firstname" name="resident[firstname]" type="text" 
+      value="<%= @resident.firstname %>" />
+  <br />
+
+  <label for="resident_admit_date">Admit Date:</label><br /> 
+  <input id="resident_admit_date" name="resident[admit_date]" type="text" 
+      value="<%= @resident.admit_date %>" />
+  <br />
+
+
+===================================
+
+Current link ==
+  http://danneu.com/posts/15-a-simple-blog-with-sinatra-and-active-record-some-useful-tools
+  

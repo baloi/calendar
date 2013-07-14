@@ -1,0 +1,14 @@
+.... List of Therapists .... <br />
+<table 'border='1'>
+<tr><th>Name</th><th>Discipline</th><th> <center>x</center> </th></tr>
+<%  Therapist.all do |therapist| %>
+<tr>
+  <td style="padding-left: 10px; padding-right: 5px">
+        <%= therapist.lastname %>, <%= therapist.firstname %> 
+  </td>
+  <td style="padding-left: 10px; padding-right: 5px"><%= therapist.discipline %></td>
+  <td><%= delete_therapist_button(therapist.id) %></td>
+</tr>
+<% end %>
+
+</table>

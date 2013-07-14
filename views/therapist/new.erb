@@ -1,0 +1,22 @@
+<h1>New therapist</h1>
+
+<form action="/therapist" method="post">
+
+  <label for="therapist_lastname">Lastname:</label><br /> 
+  <input id="therapist_lastname" name="therapist[lastname]" type="text" 
+      value="<%= @therapist.lastname %>" />
+  <br />
+
+  <label for="therapist_firstname">Firstname:</label><br /> 
+  <input id="therapist_firstname" name="therapist[firstname]" type="text" 
+      value="<%= @therapist.firstname %>" />
+  <br />
+
+  <label for="therapist_discipline">Discipline:</label><br /> 
+  <input id="therapist_discipline" name="therapist[discipline]" type="text" 
+      value="<%= @therapist.discipline %>" />
+  <br />
+
+
+  <input type="submit" value="Add therapist" />
+</form>
