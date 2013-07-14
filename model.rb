@@ -42,7 +42,22 @@ class Resident < Sequel::Model
 end
 
 class Therapist < Sequel::Model
-  #many_to_many :residents
+
+  # returns an array of hashes, example:
+  #   t = Therapist[1]
+  #   residents = t.residents
+  # Then to print the lastname(example) of the first resident:
+  #   puts residents.first[:lastname] 
+  def residents
+    residents = nil
+    all_residents = DB[:residents] # can also be DB.from(:residents)
+
+    residents = all_residents.where(:primary_pt_id => self.id)
+
+    # remember that we are returning an array of hashes
+    return residents
+
+  end
 end
 
 class Calendar
