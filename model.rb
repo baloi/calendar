@@ -84,7 +84,11 @@ class Therapist < Sequel::Model
 end
 
 class Program < Sequel::Model
-
+  #def before_create
+  # self.open ||= true
+  # set (:open => true)
+  # super
+  #end
 end
 
 class Calendar
