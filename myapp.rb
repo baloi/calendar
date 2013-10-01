@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sequel'
 require './model'
 
 # the methods will be available in all routes and views
@@ -8,6 +7,11 @@ helpers do
     # renders a partial template at views/_delete_resident_button.erb
     erb :"resident/_delete_resident_button", 
         locals: { resident_id: resident_id }
+  end
+
+  def select_therapist_option(therapists)
+    erb :"therapist/_select_therapist_option",
+        locals: { therapists: therapists }
   end
 
   def delete_therapist_button(therapist_id)

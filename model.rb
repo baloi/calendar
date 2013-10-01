@@ -1,10 +1,27 @@
-DB = Sequel.connect('sqlite://calendar.db')
+require 'sequel'
+#DB = nil 
+
+
+if $TEST == true
+  DB = Sequel.connect('sqlite://test.db')
+else
+  DB = Sequel.connect('sqlite://calendar.db')
+end
 
 def create_database
   DB.create_table :days do
     primary_key :id
     Date :date    
   end
+
+  DB.create_table :programs do
+    primary_key :id
+    String :resident_id
+    Date :start_date
+    Date :end_date
+    TrueClass :open
+  end
+
 
   DB.create_table :residents do
     primary_key :id
@@ -39,6 +56,12 @@ class Resident < Sequel::Model
   def primary_pt=(pt)
     self.primary_pt_id = pt.id
   end
+
+  def self.show_all
+    Resident.all do |r|
+      puts r.firstname + ' ' + r.lastname + ', ' + r.insurance
+    end
+  end
 end
 
 class Therapist < Sequel::Model
@@ -60,6 +83,18 @@ class Therapist < Sequel::Model
   end
 end
 
+class Program < Sequel::Model
+
+end
+
 class Calendar
 
+end
+
+def clear_database
+  # delete * from programs
+  DB[:programs].delete
+  DB[:days].delete
+  DB[:residents].delete
+  DB[:therapists].delete
 end

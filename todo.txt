@@ -1,4 +1,32 @@
+Sun Sep 29 08:22:34 EDT 2013
+> make tests for resident add and delete
+> update the master/working database to reflect new changes and add some data
+> admit date should be in program class
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 > DONE >>> resident.insurance 
 
 

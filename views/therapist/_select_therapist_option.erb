@@ -1,0 +1,6 @@
+  <select name='therapist[id]'>
+    <% therapists.each do |therapist| %>
+      <option value ='<%= therapist.id %>'><%= therapist.name %></option>
+      </option>
+    <% end %>
+  </select>
