@@ -53,8 +53,16 @@ class Resident < Sequel::Model
     return Therapist[self.primary_pt_id]
   end
 
+  def primary_ot
+    return Therapist[self.primary_ot_id]
+  end
+
   def primary_pt=(pt)
     self.primary_pt_id = pt.id
+  end
+
+  def primary_ot=(ot)
+    self.primary_ot_id = ot.id
   end
 
   def self.show_all

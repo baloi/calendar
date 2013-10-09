@@ -17,10 +17,38 @@ class ResidentTest < Test::Unit::TestCase
     assert true
   end
 
+  def test_primary_pt
+    lastname = "Alekhine"
+    firstname = "Alexander"
+    
+    therapist_lastname = "Galilili"
+    therapist_firstname = "Doda"
+
+    resident = Resident.new
+    resident.lastname = lastname 
+    resident.firstname = firstname 
+
+    therapist = Therapist.new
+    therapist.discipline = "PT"
+    therapist.firstname = therapist_firstname
+    therapist.lastname = therapist_lastname
+    therapist.save
+
+    resident.primary_pt = therapist
+    resident.save
+
+    t = Therapist.all.first
+    assert t.firstname == therapist_firstname
+    assert resident.primary_pt.lastname == therapist_lastname
+
+  end
+
   def test_add_resident
     lastname = "Alekhine"
     firstname = "Alexander"
     
+    therapist_lastname = "Galilili"
+    therapist_firstname = "Doda"
 
     resident = Resident.new
     resident.lastname = lastname 
