@@ -87,7 +87,15 @@ class Therapist < Sequel::Model
 
     # remember that we are returning an array of hashes
     return residents
+  end
 
+  # returns all OT's
+  def self.all_ot
+    Therapist.where(:discipline => "OT").all
+  end
+
+  def self.all_pt
+    Therapist.where(:discipline => "PT").all
   end
 end
 
