@@ -99,6 +99,18 @@ class Program < Sequel::Model
   #end
 end
 
+class Insurance
+  MEDA = "Med A"
+  MEDB = "Med B"
+  CDPHP = "Commercial, CDPHP"
+
+  def self.is_commercial(insurance_name)
+    insurance_type = insurance_name.split(",")[0]
+    return insurance_type == 'Commercial'
+  end
+end
+
+
 class Calendar
 
 end
