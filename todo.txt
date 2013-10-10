@@ -1,8 +1,7 @@
 Sun Sep 29 08:22:34 EDT 2013
-> make tests for resident add and delete
-> update the master/working database to reflect new changes and add some data
+> add raw data
+> think of faster data entry
 > admit date should be in program class
-
 
 
 

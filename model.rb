@@ -115,6 +115,12 @@ class Calendar
 
 end
 
+# just to have a list of therapists
+if $TEST != true # only if this is the live database
+  require './therapist_list'
+  include TherapistList 
+end
+
 def clear_database
   # delete * from programs
   DB[:programs].delete
