@@ -49,6 +49,10 @@ def create_database
 end
 
 class Resident < Sequel::Model
+  def fullname_joined
+    return self.lastname + self.firstname
+  end
+
   def primary_pt
     return Therapist[self.primary_pt_id]
   end
@@ -127,6 +131,8 @@ end
 if $TEST != true # only if this is the live database
   require './therapist_list'
   include TherapistList 
+  require './resident_list'
+  include ResidentList
 end
 
 def clear_database

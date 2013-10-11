@@ -1,6 +1,8 @@
 Sun Sep 29 08:22:34 EDT 2013
 > add raw data
-> think of faster data entry
+> think of faster data entry (dynamically create objects from resident database
+  - Resident{:lastname => "Kasparov", :firstname => "Garry"} == object KasparovGarry
+  - just try this route, but it might not work
 > admit date should be in program class
 
 
