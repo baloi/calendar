@@ -74,6 +74,10 @@ class Resident < Sequel::Model
       puts r.firstname + ' ' + r.lastname + ', ' + r.insurance
     end
   end
+
+  def self.all_insured_by(insurance)
+    return self.where(:insurance => insurance)
+  end
 end
 
 class Therapist < Sequel::Model
